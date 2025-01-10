@@ -1,0 +1,32 @@
+# Training and Development Guide for Preparing as a Salesforce Developer at Texas HHS
+# Comprehensive Python code examples for automating, integrating, and scaling systems related to Salesforce Development.
+
+# Example 1: Automating Data Seeding in Sandboxes
+# Use Python to generate test data and upload it to Salesforce using Bulk API
+import pandas as pd
+from simple_salesforce import Salesforce, SalesforceLogin, Bulk
+
+# Authenticate with Salesforce
+USERNAME = 'your_username@example.com'
+PASSWORD = 'your_password'
+SECURITY_TOKEN = 'your_security_token'
+
+session_id, instance = SalesforceLogin(
+    username=USERNAME, password=PASSWORD, security_token=SECURITY_TOKEN
+)
+sf = Salesforce(instance=instance, session_id=session_id)
+bulk = Bulk(instance=instance, session_id=session_id)
+
+# Create Test Data for Medicaid Cases
+medicaid_cases = [
+    {https://github.com/themetathug/myrepository/tree/main
+        'Applicant_Name__c': f'Test Applicant {i}',
+        'Case_Status__c': 'Open',
+        'Application_Date__c': '2023-01-01',
+    }
+    for i in range(100)
+]
+
+# Load Data into Salesforce using Bulk API
+response = bulk.create('Medicaid_Case__c', medicaid_cases)
+print(response)
