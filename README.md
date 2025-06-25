@@ -48,7 +48,7 @@ mapshock-MVP/
 ├── test_complete_workflow.py       # Complete workflow testing
 └── README.md                       # This file
 ```
-
+[SOME FILES ARE NOT COMMITED DUE TO PRIVACY PROBLEM, I DONT WANT THEM TO SHARE IN PUBLIC REPO AS PER NOW]
 ## 🚀 Quick Start
 
 ### **Option 1: Easy Startup Script**
